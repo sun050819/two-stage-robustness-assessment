@@ -1,14 +1,15 @@
 # Two-Stage Robustness Assessment Protocol
 
-Companion code for a two-stage robustness assessment protocol: fast sampling-based screening followed by sound certification. It integrates two research lines
-into one protocol:
+Companion code for a two-stage robustness assessment protocol: fast
+sampling-based screening followed by sound certification. It integrates
+two research lines into one protocol:
 
 - **FastRobustnessEstimation** — sampling-based fast robustness estimation
   (screening stage; fixed-budget sampling strategies).
 - **SAFE2_NN_Verification** — SAFE2-Krawczyk gated relaxed interval-Newton
   two-directional certification (certification stage).
 
-The paper's headline experiment — the *joint protocol evaluation*
+The headline experiment — the *joint protocol evaluation*
 (Section 7.6, Table 14) — is fully self-contained: it runs from this
 folder with no hardcoded absolute paths, using vendored verification code
 and bundled checkpoints; the MNIST and CIFAR-10 datasets are downloaded by
