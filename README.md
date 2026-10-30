@@ -59,6 +59,7 @@ python screen_recall.py --eps 0.05 --out screen_recall_eps005.json
 python screening_runs10.py       # adaptive/importance, 10 runs
 python gds_vs_rs_runs10.py       # equal-budget GGS vs RS, 10 runs
 python lemma3_demo.py            # strict-inclusion branch demo
+python measure_mlp_runtime.py    # per-sample verification time, MNIST MLPs (Table 13, ~10 min CPU)
 ```
 
 The run is deterministic (per-sample screening streams seeded from the
@@ -224,3 +225,33 @@ collapses toward the midpoint and never strictly shrinks the box
 - **Checkpoints** (MNIST MLPs and IBP-trained CNNs, 3 seeds each) are
   bundled under `data/checkpoints/`; training scripts are available under
   `experiments/vendor/` if you need to regenerate them.
+
+## Data coverage notes
+
+Reproducibility status of every number in the manuscript:
+
+- **Fully reproducible from this repo:** the joint-protocol tables
+  (Table 14, Table 15, Table 8 cross-checks), the standard-model SOTA
+  tables (Table 5, S.1, S.5), the runtime tables (Table 13,
+  `results/mlp_runtime_ibp.json` + `results/cnn_runtime_ibp.json`),
+  the scaling/Prop.-4 fits (Table 12, Table 16), and Figs. 10, 11, 12.
+  Fig. 6 (certified rate vs. radius) is reproducible from
+  `results/aggregated_by_eps.csv` + `results/crown_ibp_mnist_600.json`.
+- `results/aggregated_by_eps.csv` is the Fig. 6 data file. The SAFE2
+  column is computed from `results/joint_mlp.json`; the IBP and Krawczyk
+  columns reproduce the manuscript Table 4 values (the original CSV of the
+  SAFE2 project is not part of this repository).
+- `verification/measure_screen_timing.py` measures the end-to-end
+  50-forward screen cost `c_s(50)` (median over 30 runs on one input,
+  `results`/`verification/screen_timing.json`); `forward_timing.json`
+  reports the pure-forward-pass cost per architecture.
+- **Not reproducible from this repo (original SAFE2 two-moons / early
+  screening experiments):** Fig. 8 (witnessed-vulnerability rate on
+  two-moons boxes), Fig. 9 (contraction trajectory), Table 10 (two-moons
+  existence witnesses), Table 3 Panel A (MDS vs. RS screening rates),
+  Table 6 / Tables S.6-S.7 (max certified radius h_max), Tables S.2-S.4
+  (GDS/MDS screening and attack-detection rates). These numbers were
+  produced by the original SAFE2_NN_Verification project and early-stage
+  scripts that are not archived here; `generate_figures.py` skips Figs. 8-9
+  with a notice when the source files are absent. The values are available
+  from the authors on request.

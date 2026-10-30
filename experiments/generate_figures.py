@@ -26,8 +26,22 @@ import matplotlib.pyplot as plt
 
 BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 RESULTS = os.path.join(BASE, "results")
-SRC_RESULTS = os.path.join(BASE, "sources", "SAFE2_NN_Verification", "results")
+# fig6 reads results/aggregated_by_eps.csv (checked in; rebuilt from
+# results/joint_mlp.json and the values in Table 4). figs. 8-9 use data of
+# the original SAFE2 two-moons experiments that is not part of this repo;
+# they are skipped with a notice when the source files are absent.
+SRC_RESULTS = os.path.join(BASE, "results")
 FIG_DIR = os.path.join(BASE, "paper", "figures")
+
+
+def _src_path(fname):
+    """Return the first existing path for a figure data file."""
+    for d in (os.path.join(BASE, "results"),
+              os.path.join(BASE, "sources", "SAFE2_NN_Verification", "results")):
+        p = os.path.join(d, fname)
+        if os.path.exists(p):
+            return p
+    return None
 os.makedirs(FIG_DIR, exist_ok=True)
 
 plt.rcParams.update({
@@ -101,8 +115,18 @@ def fig2_cert_rates():
 
 
 def fig3_existence():
-    """Two-moons witnessed-vulnerability rate (data from Sec. 7.4.2)."""
-    with open(os.path.join(SRC_RESULTS, "existence_aggregated.json")) as f:
+    """Two-moons witnessed-vulnerability rate (data from Sec. 7.4.2).
+
+    The original two-moons data (existence_aggregated.json) lives in the
+    SAFE2 project and is not part of this repository; when absent the
+    figure is skipped so the script still completes for figs. 6 and 10.
+    """
+    p = _src_path("existence_aggregated.json")
+    if p is None:
+        print("skip fig8_existence: existence_aggregated.json not available "
+              "(original SAFE2 two-moons data, not included in this repo)")
+        return
+    with open(p) as f:
         d = json.load(f)
     eps_list = sorted([float(k) for k in d])
     cl = [d[str(e)]["classical_success_on_nontrivial"] * 100 for e in eps_list]
@@ -156,8 +180,17 @@ def fig3_existence():
 
 
 def fig4_contraction():
-    """Contraction trajectory on a representative two-moons box (linear scale)."""
-    with open(os.path.join(SRC_RESULTS, "protocol_demo.json")) as f:
+    """Contraction trajectory on a representative two-moons box (linear scale).
+
+    protocol_demo.json belongs to the original SAFE2 two-moons experiments
+    and is not part of this repository; when absent the figure is skipped.
+    """
+    p = _src_path("protocol_demo.json")
+    if p is None:
+        print("skip fig9_contraction: protocol_demo.json not available "
+              "(original SAFE2 two-moons data, not included in this repo)")
+        return
+    with open(p) as f:
         d = json.load(f)
     w0 = 2.0 * float(d["eps"])
     w_cl = [w0] + d["classical_widths"]

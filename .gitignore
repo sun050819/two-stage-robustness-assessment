@@ -1,0 +1,8 @@
+# Dataset downloads are fetched on first run by the vendored loaders
+# (torchvision auto-download); they are intentionally not committed.
+data/datasets/
+# Local run logs and Python caches
+results/_logs/
+experiments/_logs/
+__pycache__/
+*.pyc
