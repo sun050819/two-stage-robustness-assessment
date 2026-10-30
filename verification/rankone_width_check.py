@@ -22,9 +22,7 @@ import numpy as np
 import torch
 
 ROOT = Path(__file__).resolve().parent.parent
-CODE = ROOT / "sources" / "SAFE2_NN_Verification" / "code"
 VENDOR = ROOT / "experiments" / "vendor"
-sys.path.insert(0, str(CODE))
 sys.path.insert(0, str(VENDOR))
 
 from train import MLP, load_mnist  # noqa: E402
