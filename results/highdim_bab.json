@@ -1,0 +1,287 @@
+{
+ "summary": {
+  "eps": 0.02,
+  "seed": 0,
+  "n_boxes": 30,
+  "node_budget": 2000,
+  "decided_robust": 1,
+  "decided_not_robust": 0,
+  "undecided_after_completion": 29,
+  "total_nodes": 58001,
+  "mean_nodes_decided": 1.0,
+  "mean_nodes_unknown": 2000.0,
+  "total_time_s": 459.76
+ },
+ "records": [
+  {
+   "sample": 0,
+   "label": 0,
+   "verdict": "unknown",
+   "nodes": 2000,
+   "time_s": 16.0852,
+   "timed_out": false,
+   "counterexample_margin": null
+  },
+  {
+   "sample": 1,
+   "label": 7,
+   "verdict": "unknown",
+   "nodes": 2000,
+   "time_s": 16.1769,
+   "timed_out": false,
+   "counterexample_margin": null
+  },
+  {
+   "sample": 2,
+   "label": 4,
+   "verdict": "unknown",
+   "nodes": 2000,
+   "time_s": 15.3678,
+   "timed_out": false,
+   "counterexample_margin": null
+  },
+  {
+   "sample": 3,
+   "label": 1,
+   "verdict": "unknown",
+   "nodes": 2000,
+   "time_s": 14.3407,
+   "timed_out": false,
+   "counterexample_margin": null
+  },
+  {
+   "sample": 4,
+   "label": 8,
+   "verdict": "unknown",
+   "nodes": 2000,
+   "time_s": 14.2281,
+   "timed_out": false,
+   "counterexample_margin": null
+  },
+  {
+   "sample": 5,
+   "label": 7,
+   "verdict": "unknown",
+   "nodes": 2000,
+   "time_s": 15.0336,
+   "timed_out": false,
+   "counterexample_margin": null
+  },
+  {
+   "sample": 6,
+   "label": 2,
+   "verdict": "unknown",
+   "nodes": 2000,
+   "time_s": 15.3659,
+   "timed_out": false,
+   "counterexample_margin": null
+  },
+  {
+   "sample": 7,
+   "label": 9,
+   "verdict": "unknown",
+   "nodes": 2000,
+   "time_s": 13.5324,
+   "timed_out": false,
+   "counterexample_margin": null
+  },
+  {
+   "sample": 8,
+   "label": 5,
+   "verdict": "unknown",
+   "nodes": 2000,
+   "time_s": 15.2163,
+   "timed_out": false,
+   "counterexample_margin": null
+  },
+  {
+   "sample": 9,
+   "label": 4,
+   "verdict": "unknown",
+   "nodes": 2000,
+   "time_s": 15.682,
+   "timed_out": false,
+   "counterexample_margin": null
+  },
+  {
+   "sample": 10,
+   "label": 0,
+   "verdict": "unknown",
+   "nodes": 2000,
+   "time_s": 14.2846,
+   "timed_out": false,
+   "counterexample_margin": null
+  },
+  {
+   "sample": 11,
+   "label": 0,
+   "verdict": "unknown",
+   "nodes": 2000,
+   "time_s": 15.1855,
+   "timed_out": false,
+   "counterexample_margin": null
+  },
+  {
+   "sample": 13,
+   "label": 6,
+   "verdict": "unknown",
+   "nodes": 2000,
+   "time_s": 26.0593,
+   "timed_out": false,
+   "counterexample_margin": null
+  },
+  {
+   "sample": 14,
+   "label": 1,
+   "verdict": "unknown",
+   "nodes": 2000,
+   "time_s": 26.4865,
+   "timed_out": false,
+   "counterexample_margin": null
+  },
+  {
+   "sample": 16,
+   "label": 6,
+   "verdict": "unknown",
+   "nodes": 2000,
+   "time_s": 14.5102,
+   "timed_out": false,
+   "counterexample_margin": null
+  },
+  {
+   "sample": 17,
+   "label": 8,
+   "verdict": "unknown",
+   "nodes": 2000,
+   "time_s": 14.7023,
+   "timed_out": false,
+   "counterexample_margin": null
+  },
+  {
+   "sample": 18,
+   "label": 1,
+   "verdict": "unknown",
+   "nodes": 2000,
+   "time_s": 13.863,
+   "timed_out": false,
+   "counterexample_margin": null
+  },
+  {
+   "sample": 19,
+   "label": 7,
+   "verdict": "unknown",
+   "nodes": 2000,
+   "time_s": 12.4357,
+   "timed_out": false,
+   "counterexample_margin": null
+  },
+  {
+   "sample": 20,
+   "label": 1,
+   "verdict": "unknown",
+   "nodes": 2000,
+   "time_s": 23.0486,
+   "timed_out": false,
+   "counterexample_margin": null
+  },
+  {
+   "sample": 21,
+   "label": 8,
+   "verdict": "unknown",
+   "nodes": 2000,
+   "time_s": 16.327,
+   "timed_out": false,
+   "counterexample_margin": null
+  },
+  {
+   "sample": 22,
+   "label": 6,
+   "verdict": "unknown",
+   "nodes": 2000,
+   "time_s": 12.379,
+   "timed_out": false,
+   "counterexample_margin": null
+  },
+  {
+   "sample": 23,
+   "label": 0,
+   "verdict": "unknown",
+   "nodes": 2000,
+   "time_s": 13.6389,
+   "timed_out": false,
+   "counterexample_margin": null
+  },
+  {
+   "sample": 24,
+   "label": 3,
+   "verdict": "unknown",
+   "nodes": 2000,
+   "time_s": 13.5533,
+   "timed_out": false,
+   "counterexample_margin": null
+  },
+  {
+   "sample": 25,
+   "label": 9,
+   "verdict": "unknown",
+   "nodes": 2000,
+   "time_s": 13.3787,
+   "timed_out": false,
+   "counterexample_margin": null
+  },
+  {
+   "sample": 26,
+   "label": 4,
+   "verdict": "unknown",
+   "nodes": 2000,
+   "time_s": 16.8909,
+   "timed_out": false,
+   "counterexample_margin": null
+  },
+  {
+   "sample": 27,
+   "label": 3,
+   "verdict": "unknown",
+   "nodes": 2000,
+   "time_s": 19.764,
+   "timed_out": false,
+   "counterexample_margin": null
+  },
+  {
+   "sample": 28,
+   "label": 0,
+   "verdict": "unknown",
+   "nodes": 2000,
+   "time_s": 13.7569,
+   "timed_out": false,
+   "counterexample_margin": null
+  },
+  {
+   "sample": 29,
+   "label": 7,
+   "verdict": "unknown",
+   "nodes": 2000,
+   "time_s": 13.9297,
+   "timed_out": false,
+   "counterexample_margin": null
+  },
+  {
+   "sample": 30,
+   "label": 1,
+   "verdict": "unknown",
+   "nodes": 2000,
+   "time_s": 14.5328,
+   "timed_out": false,
+   "counterexample_margin": null
+  },
+  {
+   "sample": 31,
+   "label": 7,
+   "verdict": "robust",
+   "nodes": 1,
+   "time_s": 0.0028,
+   "timed_out": false,
+   "counterexample_margin": null
+  }
+ ]
+}

@@ -1,0 +1,619 @@
+{
+ "summary": {
+  "seed": 0,
+  "eps": 0.01,
+  "n_samples": 100,
+  "node_budget": 2000,
+  "safe2_certified_robust_rate": 0.18,
+  "safe2_total_time_s": 137.99,
+  "bab_certified_robust_rate": 0.42,
+  "bab_not_robust_rate": 0.0,
+  "bab_unknown_rate": 0.58,
+  "bab_total_nodes": 116042,
+  "bab_mean_nodes_robust": 1.0,
+  "bab_total_time_s": 1180.42,
+  "wall_time_s": 1318.41
+ },
+ "details": [
+  {
+   "sample": 0,
+   "safe2": "robust",
+   "bab": "robust",
+   "bab_nodes": 1
+  },
+  {
+   "sample": 1,
+   "safe2": "undecided",
+   "bab": "robust",
+   "bab_nodes": 1
+  },
+  {
+   "sample": 2,
+   "safe2": "undecided",
+   "bab": "unknown",
+   "bab_nodes": 2000
+  },
+  {
+   "sample": 3,
+   "safe2": "undecided",
+   "bab": "unknown",
+   "bab_nodes": 2000
+  },
+  {
+   "sample": 4,
+   "safe2": "undecided",
+   "bab": "unknown",
+   "bab_nodes": 2000
+  },
+  {
+   "sample": 5,
+   "safe2": "undecided",
+   "bab": "robust",
+   "bab_nodes": 1
+  },
+  {
+   "sample": 6,
+   "safe2": "undecided",
+   "bab": "unknown",
+   "bab_nodes": 2000
+  },
+  {
+   "sample": 7,
+   "safe2": "undecided",
+   "bab": "unknown",
+   "bab_nodes": 2000
+  },
+  {
+   "sample": 8,
+   "safe2": "undecided",
+   "bab": "unknown",
+   "bab_nodes": 2000
+  },
+  {
+   "sample": 9,
+   "safe2": "undecided",
+   "bab": "robust",
+   "bab_nodes": 1
+  },
+  {
+   "sample": 10,
+   "safe2": "undecided",
+   "bab": "robust",
+   "bab_nodes": 1
+  },
+  {
+   "sample": 11,
+   "safe2": "robust",
+   "bab": "robust",
+   "bab_nodes": 1
+  },
+  {
+   "sample": 13,
+   "safe2": "robust",
+   "bab": "unknown",
+   "bab_nodes": 2000
+  },
+  {
+   "sample": 14,
+   "safe2": "undecided",
+   "bab": "robust",
+   "bab_nodes": 1
+  },
+  {
+   "sample": 16,
+   "safe2": "robust",
+   "bab": "robust",
+   "bab_nodes": 1
+  },
+  {
+   "sample": 17,
+   "safe2": "undecided",
+   "bab": "unknown",
+   "bab_nodes": 2000
+  },
+  {
+   "sample": 18,
+   "safe2": "undecided",
+   "bab": "robust",
+   "bab_nodes": 1
+  },
+  {
+   "sample": 19,
+   "safe2": "undecided",
+   "bab": "unknown",
+   "bab_nodes": 2000
+  },
+  {
+   "sample": 20,
+   "safe2": "undecided",
+   "bab": "unknown",
+   "bab_nodes": 2000
+  },
+  {
+   "sample": 21,
+   "safe2": "undecided",
+   "bab": "unknown",
+   "bab_nodes": 2000
+  },
+  {
+   "sample": 22,
+   "safe2": "robust",
+   "bab": "robust",
+   "bab_nodes": 1
+  },
+  {
+   "sample": 23,
+   "safe2": "robust",
+   "bab": "robust",
+   "bab_nodes": 1
+  },
+  {
+   "sample": 24,
+   "safe2": "undecided",
+   "bab": "unknown",
+   "bab_nodes": 2000
+  },
+  {
+   "sample": 25,
+   "safe2": "undecided",
+   "bab": "unknown",
+   "bab_nodes": 2000
+  },
+  {
+   "sample": 26,
+   "safe2": "undecided",
+   "bab": "unknown",
+   "bab_nodes": 2000
+  },
+  {
+   "sample": 27,
+   "safe2": "undecided",
+   "bab": "unknown",
+   "bab_nodes": 2000
+  },
+  {
+   "sample": 28,
+   "safe2": "robust",
+   "bab": "robust",
+   "bab_nodes": 1
+  },
+  {
+   "sample": 29,
+   "safe2": "undecided",
+   "bab": "robust",
+   "bab_nodes": 1
+  },
+  {
+   "sample": 30,
+   "safe2": "undecided",
+   "bab": "unknown",
+   "bab_nodes": 2000
+  },
+  {
+   "sample": 31,
+   "safe2": "robust",
+   "bab": "robust",
+   "bab_nodes": 1
+  },
+  {
+   "sample": 32,
+   "safe2": "undecided",
+   "bab": "robust",
+   "bab_nodes": 1
+  },
+  {
+   "sample": 33,
+   "safe2": "undecided",
+   "bab": "unknown",
+   "bab_nodes": 2000
+  },
+  {
+   "sample": 34,
+   "safe2": "undecided",
+   "bab": "unknown",
+   "bab_nodes": 2000
+  },
+  {
+   "sample": 35,
+   "safe2": "robust",
+   "bab": "robust",
+   "bab_nodes": 1
+  },
+  {
+   "sample": 36,
+   "safe2": "robust",
+   "bab": "robust",
+   "bab_nodes": 1
+  },
+  {
+   "sample": 37,
+   "safe2": "undecided",
+   "bab": "unknown",
+   "bab_nodes": 2000
+  },
+  {
+   "sample": 38,
+   "safe2": "undecided",
+   "bab": "unknown",
+   "bab_nodes": 2000
+  },
+  {
+   "sample": 39,
+   "safe2": "undecided",
+   "bab": "unknown",
+   "bab_nodes": 2000
+  },
+  {
+   "sample": 40,
+   "safe2": "undecided",
+   "bab": "robust",
+   "bab_nodes": 1
+  },
+  {
+   "sample": 41,
+   "safe2": "undecided",
+   "bab": "unknown",
+   "bab_nodes": 2000
+  },
+  {
+   "sample": 42,
+   "safe2": "undecided",
+   "bab": "unknown",
+   "bab_nodes": 2000
+  },
+  {
+   "sample": 43,
+   "safe2": "robust",
+   "bab": "robust",
+   "bab_nodes": 1
+  },
+  {
+   "sample": 44,
+   "safe2": "undecided",
+   "bab": "robust",
+   "bab_nodes": 1
+  },
+  {
+   "sample": 45,
+   "safe2": "undecided",
+   "bab": "unknown",
+   "bab_nodes": 2000
+  },
+  {
+   "sample": 46,
+   "safe2": "undecided",
+   "bab": "robust",
+   "bab_nodes": 1
+  },
+  {
+   "sample": 47,
+   "safe2": "undecided",
+   "bab": "unknown",
+   "bab_nodes": 2000
+  },
+  {
+   "sample": 48,
+   "safe2": "robust",
+   "bab": "robust",
+   "bab_nodes": 1
+  },
+  {
+   "sample": 49,
+   "safe2": "undecided",
+   "bab": "unknown",
+   "bab_nodes": 2000
+  },
+  {
+   "sample": 50,
+   "safe2": "undecided",
+   "bab": "unknown",
+   "bab_nodes": 2000
+  },
+  {
+   "sample": 51,
+   "safe2": "undecided",
+   "bab": "unknown",
+   "bab_nodes": 2000
+  },
+  {
+   "sample": 52,
+   "safe2": "undecided",
+   "bab": "robust",
+   "bab_nodes": 1
+  },
+  {
+   "sample": 53,
+   "safe2": "undecided",
+   "bab": "robust",
+   "bab_nodes": 1
+  },
+  {
+   "sample": 54,
+   "safe2": "undecided",
+   "bab": "unknown",
+   "bab_nodes": 2000
+  },
+  {
+   "sample": 55,
+   "safe2": "robust",
+   "bab": "unknown",
+   "bab_nodes": 2000
+  },
+  {
+   "sample": 57,
+   "safe2": "undecided",
+   "bab": "robust",
+   "bab_nodes": 1
+  },
+  {
+   "sample": 58,
+   "safe2": "undecided",
+   "bab": "robust",
+   "bab_nodes": 1
+  },
+  {
+   "sample": 59,
+   "safe2": "undecided",
+   "bab": "robust",
+   "bab_nodes": 1
+  },
+  {
+   "sample": 60,
+   "safe2": "undecided",
+   "bab": "unknown",
+   "bab_nodes": 2000
+  },
+  {
+   "sample": 61,
+   "safe2": "undecided",
+   "bab": "unknown",
+   "bab_nodes": 2000
+  },
+  {
+   "sample": 62,
+   "safe2": "undecided",
+   "bab": "unknown",
+   "bab_nodes": 2000
+  },
+  {
+   "sample": 63,
+   "safe2": "undecided",
+   "bab": "unknown",
+   "bab_nodes": 2000
+  },
+  {
+   "sample": 64,
+   "safe2": "robust",
+   "bab": "unknown",
+   "bab_nodes": 2000
+  },
+  {
+   "sample": 65,
+   "safe2": "undecided",
+   "bab": "unknown",
+   "bab_nodes": 2000
+  },
+  {
+   "sample": 66,
+   "safe2": "undecided",
+   "bab": "unknown",
+   "bab_nodes": 2000
+  },
+  {
+   "sample": 67,
+   "safe2": "undecided",
+   "bab": "robust",
+   "bab_nodes": 1
+  },
+  {
+   "sample": 68,
+   "safe2": "undecided",
+   "bab": "unknown",
+   "bab_nodes": 2000
+  },
+  {
+   "sample": 69,
+   "safe2": "undecided",
+   "bab": "robust",
+   "bab_nodes": 1
+  },
+  {
+   "sample": 70,
+   "safe2": "robust",
+   "bab": "robust",
+   "bab_nodes": 1
+  },
+  {
+   "sample": 71,
+   "safe2": "undecided",
+   "bab": "robust",
+   "bab_nodes": 1
+  },
+  {
+   "sample": 72,
+   "safe2": "undecided",
+   "bab": "unknown",
+   "bab_nodes": 2000
+  },
+  {
+   "sample": 73,
+   "safe2": "undecided",
+   "bab": "unknown",
+   "bab_nodes": 2000
+  },
+  {
+   "sample": 74,
+   "safe2": "undecided",
+   "bab": "unknown",
+   "bab_nodes": 2000
+  },
+  {
+   "sample": 75,
+   "safe2": "undecided",
+   "bab": "unknown",
+   "bab_nodes": 2000
+  },
+  {
+   "sample": 77,
+   "safe2": "undecided",
+   "bab": "unknown",
+   "bab_nodes": 2000
+  },
+  {
+   "sample": 78,
+   "safe2": "undecided",
+   "bab": "unknown",
+   "bab_nodes": 2000
+  },
+  {
+   "sample": 79,
+   "safe2": "undecided",
+   "bab": "unknown",
+   "bab_nodes": 2000
+  },
+  {
+   "sample": 82,
+   "safe2": "undecided",
+   "bab": "unknown",
+   "bab_nodes": 2000
+  },
+  {
+   "sample": 83,
+   "safe2": "undecided",
+   "bab": "robust",
+   "bab_nodes": 1
+  },
+  {
+   "sample": 84,
+   "safe2": "undecided",
+   "bab": "unknown",
+   "bab_nodes": 2000
+  },
+  {
+   "sample": 85,
+   "safe2": "robust",
+   "bab": "unknown",
+   "bab_nodes": 2000
+  },
+  {
+   "sample": 86,
+   "safe2": "undecided",
+   "bab": "robust",
+   "bab_nodes": 1
+  },
+  {
+   "sample": 87,
+   "safe2": "robust",
+   "bab": "robust",
+   "bab_nodes": 1
+  },
+  {
+   "sample": 88,
+   "safe2": "undecided",
+   "bab": "robust",
+   "bab_nodes": 1
+  },
+  {
+   "sample": 90,
+   "safe2": "undecided",
+   "bab": "unknown",
+   "bab_nodes": 2000
+  },
+  {
+   "sample": 91,
+   "safe2": "undecided",
+   "bab": "robust",
+   "bab_nodes": 1
+  },
+  {
+   "sample": 93,
+   "safe2": "undecided",
+   "bab": "robust",
+   "bab_nodes": 1
+  },
+  {
+   "sample": 94,
+   "safe2": "undecided",
+   "bab": "unknown",
+   "bab_nodes": 2000
+  },
+  {
+   "sample": 95,
+   "safe2": "undecided",
+   "bab": "unknown",
+   "bab_nodes": 2000
+  },
+  {
+   "sample": 96,
+   "safe2": "undecided",
+   "bab": "robust",
+   "bab_nodes": 1
+  },
+  {
+   "sample": 97,
+   "safe2": "undecided",
+   "bab": "unknown",
+   "bab_nodes": 2000
+  },
+  {
+   "sample": 98,
+   "safe2": "undecided",
+   "bab": "unknown",
+   "bab_nodes": 2000
+  },
+  {
+   "sample": 100,
+   "safe2": "undecided",
+   "bab": "unknown",
+   "bab_nodes": 2000
+  },
+  {
+   "sample": 101,
+   "safe2": "undecided",
+   "bab": "unknown",
+   "bab_nodes": 2000
+  },
+  {
+   "sample": 102,
+   "safe2": "undecided",
+   "bab": "robust",
+   "bab_nodes": 1
+  },
+  {
+   "sample": 103,
+   "safe2": "undecided",
+   "bab": "robust",
+   "bab_nodes": 1
+  },
+  {
+   "sample": 104,
+   "safe2": "undecided",
+   "bab": "unknown",
+   "bab_nodes": 2000
+  },
+  {
+   "sample": 105,
+   "safe2": "undecided",
+   "bab": "unknown",
+   "bab_nodes": 2000
+  },
+  {
+   "sample": 106,
+   "safe2": "undecided",
+   "bab": "unknown",
+   "bab_nodes": 2000
+  },
+  {
+   "sample": 107,
+   "safe2": "undecided",
+   "bab": "robust",
+   "bab_nodes": 1
+  },
+  {
+   "sample": 108,
+   "safe2": "robust",
+   "bab": "robust",
+   "bab_nodes": 1
+  }
+ ]
+}

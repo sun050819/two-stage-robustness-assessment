@@ -1,0 +1,517 @@
+{
+  "summary": {
+    "eps": 0.01,
+    "n_samples": 100,
+    "screen_budget": 50,
+    "screen_vulnerable_rate": 0.0,
+    "pgd_vulnerable_rate": 0.01,
+    "both_rate": 0.0,
+    "screen_only_rate": 0.0,
+    "pgd_only_rate": 0.01,
+    "screen_recall_on_pgd_vulnerable": 0.0,
+    "screen_precision_vs_pgd": null,
+    "wall_time_s": 0.009016275405883789
+  },
+  "details": [
+    {
+      "idx": 0,
+      "screen_vulnerable": false,
+      "pgd_vulnerable": false
+    },
+    {
+      "idx": 1,
+      "screen_vulnerable": false,
+      "pgd_vulnerable": false
+    },
+    {
+      "idx": 2,
+      "screen_vulnerable": false,
+      "pgd_vulnerable": false
+    },
+    {
+      "idx": 3,
+      "screen_vulnerable": false,
+      "pgd_vulnerable": false
+    },
+    {
+      "idx": 4,
+      "screen_vulnerable": false,
+      "pgd_vulnerable": false
+    },
+    {
+      "idx": 5,
+      "screen_vulnerable": false,
+      "pgd_vulnerable": false
+    },
+    {
+      "idx": 6,
+      "screen_vulnerable": false,
+      "pgd_vulnerable": false
+    },
+    {
+      "idx": 7,
+      "screen_vulnerable": false,
+      "pgd_vulnerable": false
+    },
+    {
+      "idx": 8,
+      "screen_vulnerable": false,
+      "pgd_vulnerable": false
+    },
+    {
+      "idx": 9,
+      "screen_vulnerable": false,
+      "pgd_vulnerable": false
+    },
+    {
+      "idx": 10,
+      "screen_vulnerable": false,
+      "pgd_vulnerable": false
+    },
+    {
+      "idx": 11,
+      "screen_vulnerable": false,
+      "pgd_vulnerable": false
+    },
+    {
+      "idx": 13,
+      "screen_vulnerable": false,
+      "pgd_vulnerable": false
+    },
+    {
+      "idx": 14,
+      "screen_vulnerable": false,
+      "pgd_vulnerable": false
+    },
+    {
+      "idx": 16,
+      "screen_vulnerable": false,
+      "pgd_vulnerable": false
+    },
+    {
+      "idx": 17,
+      "screen_vulnerable": false,
+      "pgd_vulnerable": false
+    },
+    {
+      "idx": 18,
+      "screen_vulnerable": false,
+      "pgd_vulnerable": false
+    },
+    {
+      "idx": 19,
+      "screen_vulnerable": false,
+      "pgd_vulnerable": false
+    },
+    {
+      "idx": 20,
+      "screen_vulnerable": false,
+      "pgd_vulnerable": false
+    },
+    {
+      "idx": 21,
+      "screen_vulnerable": false,
+      "pgd_vulnerable": false
+    },
+    {
+      "idx": 22,
+      "screen_vulnerable": false,
+      "pgd_vulnerable": false
+    },
+    {
+      "idx": 23,
+      "screen_vulnerable": false,
+      "pgd_vulnerable": false
+    },
+    {
+      "idx": 24,
+      "screen_vulnerable": false,
+      "pgd_vulnerable": false
+    },
+    {
+      "idx": 25,
+      "screen_vulnerable": false,
+      "pgd_vulnerable": false
+    },
+    {
+      "idx": 26,
+      "screen_vulnerable": false,
+      "pgd_vulnerable": false
+    },
+    {
+      "idx": 27,
+      "screen_vulnerable": false,
+      "pgd_vulnerable": false
+    },
+    {
+      "idx": 28,
+      "screen_vulnerable": false,
+      "pgd_vulnerable": false
+    },
+    {
+      "idx": 29,
+      "screen_vulnerable": false,
+      "pgd_vulnerable": false
+    },
+    {
+      "idx": 30,
+      "screen_vulnerable": false,
+      "pgd_vulnerable": false
+    },
+    {
+      "idx": 31,
+      "screen_vulnerable": false,
+      "pgd_vulnerable": false
+    },
+    {
+      "idx": 32,
+      "screen_vulnerable": false,
+      "pgd_vulnerable": false
+    },
+    {
+      "idx": 33,
+      "screen_vulnerable": false,
+      "pgd_vulnerable": false
+    },
+    {
+      "idx": 34,
+      "screen_vulnerable": false,
+      "pgd_vulnerable": false
+    },
+    {
+      "idx": 35,
+      "screen_vulnerable": false,
+      "pgd_vulnerable": false
+    },
+    {
+      "idx": 36,
+      "screen_vulnerable": false,
+      "pgd_vulnerable": false
+    },
+    {
+      "idx": 37,
+      "screen_vulnerable": false,
+      "pgd_vulnerable": false
+    },
+    {
+      "idx": 38,
+      "screen_vulnerable": false,
+      "pgd_vulnerable": false
+    },
+    {
+      "idx": 39,
+      "screen_vulnerable": false,
+      "pgd_vulnerable": false
+    },
+    {
+      "idx": 40,
+      "screen_vulnerable": false,
+      "pgd_vulnerable": false
+    },
+    {
+      "idx": 41,
+      "screen_vulnerable": false,
+      "pgd_vulnerable": false
+    },
+    {
+      "idx": 42,
+      "screen_vulnerable": false,
+      "pgd_vulnerable": false
+    },
+    {
+      "idx": 43,
+      "screen_vulnerable": false,
+      "pgd_vulnerable": false
+    },
+    {
+      "idx": 44,
+      "screen_vulnerable": false,
+      "pgd_vulnerable": false
+    },
+    {
+      "idx": 45,
+      "screen_vulnerable": false,
+      "pgd_vulnerable": false
+    },
+    {
+      "idx": 46,
+      "screen_vulnerable": false,
+      "pgd_vulnerable": false
+    },
+    {
+      "idx": 47,
+      "screen_vulnerable": false,
+      "pgd_vulnerable": false
+    },
+    {
+      "idx": 48,
+      "screen_vulnerable": false,
+      "pgd_vulnerable": false
+    },
+    {
+      "idx": 49,
+      "screen_vulnerable": false,
+      "pgd_vulnerable": false
+    },
+    {
+      "idx": 50,
+      "screen_vulnerable": false,
+      "pgd_vulnerable": false
+    },
+    {
+      "idx": 51,
+      "screen_vulnerable": false,
+      "pgd_vulnerable": false
+    },
+    {
+      "idx": 52,
+      "screen_vulnerable": false,
+      "pgd_vulnerable": false
+    },
+    {
+      "idx": 53,
+      "screen_vulnerable": false,
+      "pgd_vulnerable": false
+    },
+    {
+      "idx": 54,
+      "screen_vulnerable": false,
+      "pgd_vulnerable": false
+    },
+    {
+      "idx": 55,
+      "screen_vulnerable": false,
+      "pgd_vulnerable": false
+    },
+    {
+      "idx": 57,
+      "screen_vulnerable": false,
+      "pgd_vulnerable": false
+    },
+    {
+      "idx": 58,
+      "screen_vulnerable": false,
+      "pgd_vulnerable": false
+    },
+    {
+      "idx": 59,
+      "screen_vulnerable": false,
+      "pgd_vulnerable": false
+    },
+    {
+      "idx": 60,
+      "screen_vulnerable": false,
+      "pgd_vulnerable": false
+    },
+    {
+      "idx": 61,
+      "screen_vulnerable": false,
+      "pgd_vulnerable": false
+    },
+    {
+      "idx": 62,
+      "screen_vulnerable": false,
+      "pgd_vulnerable": false
+    },
+    {
+      "idx": 63,
+      "screen_vulnerable": false,
+      "pgd_vulnerable": false
+    },
+    {
+      "idx": 64,
+      "screen_vulnerable": false,
+      "pgd_vulnerable": false
+    },
+    {
+      "idx": 65,
+      "screen_vulnerable": false,
+      "pgd_vulnerable": false
+    },
+    {
+      "idx": 66,
+      "screen_vulnerable": false,
+      "pgd_vulnerable": false
+    },
+    {
+      "idx": 67,
+      "screen_vulnerable": false,
+      "pgd_vulnerable": false
+    },
+    {
+      "idx": 68,
+      "screen_vulnerable": false,
+      "pgd_vulnerable": false
+    },
+    {
+      "idx": 69,
+      "screen_vulnerable": false,
+      "pgd_vulnerable": false
+    },
+    {
+      "idx": 70,
+      "screen_vulnerable": false,
+      "pgd_vulnerable": false
+    },
+    {
+      "idx": 71,
+      "screen_vulnerable": false,
+      "pgd_vulnerable": false
+    },
+    {
+      "idx": 72,
+      "screen_vulnerable": false,
+      "pgd_vulnerable": false
+    },
+    {
+      "idx": 73,
+      "screen_vulnerable": false,
+      "pgd_vulnerable": false
+    },
+    {
+      "idx": 74,
+      "screen_vulnerable": false,
+      "pgd_vulnerable": false
+    },
+    {
+      "idx": 75,
+      "screen_vulnerable": false,
+      "pgd_vulnerable": false
+    },
+    {
+      "idx": 77,
+      "screen_vulnerable": false,
+      "pgd_vulnerable": false
+    },
+    {
+      "idx": 78,
+      "screen_vulnerable": false,
+      "pgd_vulnerable": false
+    },
+    {
+      "idx": 79,
+      "screen_vulnerable": false,
+      "pgd_vulnerable": false
+    },
+    {
+      "idx": 82,
+      "screen_vulnerable": false,
+      "pgd_vulnerable": false
+    },
+    {
+      "idx": 83,
+      "screen_vulnerable": false,
+      "pgd_vulnerable": false
+    },
+    {
+      "idx": 84,
+      "screen_vulnerable": false,
+      "pgd_vulnerable": false
+    },
+    {
+      "idx": 85,
+      "screen_vulnerable": false,
+      "pgd_vulnerable": false
+    },
+    {
+      "idx": 86,
+      "screen_vulnerable": false,
+      "pgd_vulnerable": false
+    },
+    {
+      "idx": 87,
+      "screen_vulnerable": false,
+      "pgd_vulnerable": false
+    },
+    {
+      "idx": 88,
+      "screen_vulnerable": false,
+      "pgd_vulnerable": false
+    },
+    {
+      "idx": 90,
+      "screen_vulnerable": false,
+      "pgd_vulnerable": false
+    },
+    {
+      "idx": 91,
+      "screen_vulnerable": false,
+      "pgd_vulnerable": false
+    },
+    {
+      "idx": 93,
+      "screen_vulnerable": false,
+      "pgd_vulnerable": false
+    },
+    {
+      "idx": 94,
+      "screen_vulnerable": false,
+      "pgd_vulnerable": false
+    },
+    {
+      "idx": 95,
+      "screen_vulnerable": false,
+      "pgd_vulnerable": false
+    },
+    {
+      "idx": 96,
+      "screen_vulnerable": false,
+      "pgd_vulnerable": false
+    },
+    {
+      "idx": 97,
+      "screen_vulnerable": false,
+      "pgd_vulnerable": true
+    },
+    {
+      "idx": 98,
+      "screen_vulnerable": false,
+      "pgd_vulnerable": false
+    },
+    {
+      "idx": 100,
+      "screen_vulnerable": false,
+      "pgd_vulnerable": false
+    },
+    {
+      "idx": 101,
+      "screen_vulnerable": false,
+      "pgd_vulnerable": false
+    },
+    {
+      "idx": 102,
+      "screen_vulnerable": false,
+      "pgd_vulnerable": false
+    },
+    {
+      "idx": 103,
+      "screen_vulnerable": false,
+      "pgd_vulnerable": false
+    },
+    {
+      "idx": 104,
+      "screen_vulnerable": false,
+      "pgd_vulnerable": false
+    },
+    {
+      "idx": 105,
+      "screen_vulnerable": false,
+      "pgd_vulnerable": false
+    },
+    {
+      "idx": 106,
+      "screen_vulnerable": false,
+      "pgd_vulnerable": false
+    },
+    {
+      "idx": 107,
+      "screen_vulnerable": false,
+      "pgd_vulnerable": false
+    },
+    {
+      "idx": 108,
+      "screen_vulnerable": false,
+      "pgd_vulnerable": false
+    }
+  ]
+}

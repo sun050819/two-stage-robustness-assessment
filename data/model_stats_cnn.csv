@@ -1,0 +1,4 @@
+regime,seed,test_acc
+std,0,0.614800
+std,1,0.618600
+std,2,0.613900

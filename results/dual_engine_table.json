@@ -1,0 +1,95 @@
+{
+ "rows": [
+  {
+   "workload": "MNIST MLP",
+   "eps": 0.01,
+   "engine": "SAFE2-Krawczyk",
+   "L": 0.17,
+   "U_N50": 0.9917,
+   "U_N500": 0.9867,
+   "screened_N50": 5,
+   "n": 600
+  },
+  {
+   "workload": "MNIST MLP",
+   "eps": 0.01,
+   "engine": "CROWN-IBP (refined)",
+   "L": 0.7817,
+   "U_N50": 0.9917,
+   "U_N500": 0.9867,
+   "screened_N50": 5,
+   "n": 600
+  },
+  {
+   "workload": "MNIST MLP",
+   "eps": 0.02,
+   "engine": "SAFE2-Krawczyk",
+   "L": 0.0,
+   "U_N50": 0.985,
+   "U_N500": 0.9767,
+   "screened_N50": 9,
+   "n": 600
+  },
+  {
+   "workload": "MNIST MLP",
+   "eps": 0.02,
+   "engine": "CROWN-IBP (refined)",
+   "L": 0.2583,
+   "U_N50": 0.985,
+   "U_N500": 0.9767,
+   "screened_N50": 9,
+   "n": 600
+  },
+  {
+   "workload": "MNIST MLP",
+   "eps": 0.05,
+   "engine": "SAFE2-Krawczyk",
+   "L": 0.0,
+   "U_N50": 0.9717,
+   "U_N500": 0.955,
+   "screened_N50": 17,
+   "n": 600
+  },
+  {
+   "workload": "CIFAR-10 (IBP)",
+   "eps": 0.007843,
+   "engine": "SAFE2-Krawczyk",
+   "L": 0.55,
+   "U_N50": 0.9787,
+   "U_N500": 0.9727,
+   "screened_N50": 32,
+   "n": 1500
+  },
+  {
+   "workload": "CIFAR-10 (IBP)",
+   "eps": 0.007843,
+   "engine": "CROWN-IBP (refined)",
+   "L": 0.604,
+   "U_N50": 0.9787,
+   "U_N500": 0.9727,
+   "screened_N50": 32,
+   "n": 1500
+  },
+  {
+   "workload": "CIFAR-10 (IBP)",
+   "eps": 0.015686,
+   "engine": "SAFE2-Krawczyk",
+   "L": 0.252,
+   "U_N50": 0.9587,
+   "U_N500": 0.952,
+   "screened_N50": 62,
+   "n": 1500
+  },
+  {
+   "workload": "CIFAR-10 (IBP)",
+   "eps": 0.015686,
+   "engine": "CROWN-IBP (refined)",
+   "L": 0.3367,
+   "U_N50": 0.9587,
+   "U_N500": 0.952,
+   "screened_N50": 62,
+   "n": 1500
+  }
+ ],
+ "note": "L = certified-robust rate over ALL samples (joint protocol denominator); U is screening-side and engine-independent; consistency conditions (i)-(iii) verified in dual_engine_check."
+}

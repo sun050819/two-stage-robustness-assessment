@@ -1,0 +1,50 @@
+{
+ "cifar_cnn": {
+  "1/255": {
+   "n": 1500,
+   "robust": 1118,
+   "exist": 0,
+   "undecided": 382,
+   "L": 0.7453333333333333,
+   "U": 1.0,
+   "width": 0.2546666666666667
+  },
+  "2/255": {
+   "n": 1500,
+   "robust": 825,
+   "exist": 0,
+   "undecided": 675,
+   "L": 0.55,
+   "U": 1.0,
+   "width": 0.44999999999999996
+  },
+  "4/255": {
+   "n": 1500,
+   "robust": 378,
+   "exist": 3,
+   "undecided": 1119,
+   "L": 0.252,
+   "U": 0.998,
+   "width": 0.746
+  },
+  "8/255": {
+   "n": 1500,
+   "robust": 42,
+   "exist": 3,
+   "undecided": 1455,
+   "L": 0.028,
+   "U": 0.998,
+   "width": 0.97
+  }
+ },
+ "mnist_mlp": {
+  "n": 600,
+  "robust": 102,
+  "exist": 0,
+  "undecided": 498,
+  "L": 0.17,
+  "U": 1.0,
+  "width": 0.83
+ },
+ "note": "L from SAFE2-Krawczyk certified-robust proofs; U from existence witnesses (margin<=0, interval-guaranteed). Certification stage only, no screening."
+}

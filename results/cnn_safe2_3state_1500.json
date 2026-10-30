@@ -1,0 +1,69 @@
+{
+ "per_seed_eps": {
+  "0_0.0039": {
+   "robust": 393,
+   "exist": 0,
+   "undecided": 107
+  },
+  "0_0.0078": {
+   "robust": 299,
+   "exist": 0,
+   "undecided": 201
+  },
+  "0_0.0157": {
+   "robust": 143,
+   "exist": 0,
+   "undecided": 357
+  },
+  "0_0.0314": {
+   "robust": 16,
+   "exist": 0,
+   "undecided": 484
+  },
+  "1_0.0039": {
+   "robust": 332,
+   "exist": 0,
+   "undecided": 168
+  },
+  "1_0.0078": {
+   "robust": 236,
+   "exist": 0,
+   "undecided": 264
+  },
+  "1_0.0157": {
+   "robust": 114,
+   "exist": 3,
+   "undecided": 383
+  },
+  "1_0.0314": {
+   "robust": 15,
+   "exist": 3,
+   "undecided": 482
+  },
+  "2_0.0039": {
+   "robust": 393,
+   "exist": 0,
+   "undecided": 107
+  },
+  "2_0.0078": {
+   "robust": 290,
+   "exist": 0,
+   "undecided": 210
+  },
+  "2_0.0157": {
+   "robust": 121,
+   "exist": 0,
+   "undecided": 379
+  },
+  "2_0.0314": {
+   "robust": 11,
+   "exist": 0,
+   "undecided": 489
+  }
+ },
+ "totals": {
+  "robust": 2363,
+  "exist": 6,
+  "undecided": 3631
+ }
+}
