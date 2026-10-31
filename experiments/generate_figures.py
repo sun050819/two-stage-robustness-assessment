@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Regenerate paper figures (Figs. 2-5) to PR figure standards.
+"""Regenerate manuscript figures (Figs. 2-5) to PR figure standards.
 
 PR-compliant conventions applied:
   * vector PDF output (no in-figure titles, no color-dependent text)
@@ -7,10 +7,10 @@ PR-compliant conventions applied:
   * triple distinction (color + line style + marker) so plots stay
     readable in grayscale; no red/green as the only contrast
   * legends outside the data area
-  * terminology unified to the paper text ("witnessed-vulnerability
+  * terminology unified to the manuscript text ("witnessed-vulnerability
     rate")
   * data sources are the checked-in result files; every number matches
-    the corresponding table in the paper.
+    the corresponding table in the manuscript.
 
 Run:  python generate_figures.py
 Outputs are written to ../paper/figures/ (fig6_cert_rates.pdf,
@@ -53,7 +53,7 @@ plt.rcParams.update({
     "ytick.major.width": 0.7,
     "legend.frameon": False,
     "figure.dpi": 300,
-    "pdf.fonttype": 42,   # embed TrueType fonts (Publisher production requirement)
+    "pdf.fonttype": 42,   # embed TrueType fonts (Elsevier production requirement)
     "ps.fonttype": 42,
 })
 
@@ -81,13 +81,20 @@ def fig2_cert_rates():
             rows.setdefault(method, {})[float(eps)] = (float(mean), float(std))
     with open(os.path.join(RESULTS, "crown_ibp_mnist_600.json")) as f:
         crown = json.load(f)["pooled"]
+    # Recompute the CROWN-IBP std from the per-seed rates (population std,
+    # matching the manuscript's tab:rates convention) instead of trusting a
+    # pooled value that used a different ddof.
+    with open(os.path.join(RESULTS, "crown_ibp_mnist_600.json")) as f:
+        crown_ps = json.load(f)["per_seed_eps"]
     eps_list = [0.01, 0.02, 0.05, 0.1, 0.15, 0.2]
+    crown_std = {e: float(np.std([crown_ps[f"{s}_{e}"]["rate"] for s in range(3)]))
+                 for e in eps_list}
     fig, ax = plt.subplots(figsize=(4.6, 3.45))
     series = {
         "IBP":            [(rows["ibp"][e][0], rows["ibp"][e][1]) for e in eps_list],
         "Krawczyk":       [(rows["krawczyk"][e][0], rows["krawczyk"][e][1]) for e in eps_list],
         "SAFE2-Krawczyk": [(rows["safe2"][e][0], rows["safe2"][e][1]) for e in eps_list],
-        "CROWN-IBP (self-implemented)": [(crown[str(e)]["rate_mean"], crown[str(e)]["rate_std"])
+        "CROWN-IBP (self-implemented)": [(crown[str(e)]["rate_mean"], crown_std[e])
                              for e in eps_list],
     }
     for name, pts in series.items():
@@ -140,8 +147,8 @@ def fig3_existence():
     b2 = ax.bar(x + width / 2, s2, width, color="#2f6f4f", edgecolor="black",
                 linewidth=0.5, hatch="//", label="SAFE2 gated relaxation")
     for xi, (v1, v2) in enumerate(zip(cl, s2)):
-        ax.text(xi - width / 2, v1 + 1.2, f"{v1:.1f}", ha="center", fontsize=7)
-        ax.text(xi + width / 2, v2 + 1.2, f"{v2:.1f}", ha="center", fontsize=7)
+        ax.text(xi - width / 2, v1 + 2.2, f"{v1:.1f}", ha="center", fontsize=7)
+        ax.text(xi + width / 2, v2 + 2.2, f"{v2:.1f}", ha="center", fontsize=7)
     # n annotations folded into the radius tick labels (two lines), so the
     # annotation cannot collide with the legend or the significance bracket.
     ax.set_xticks(x)
@@ -151,30 +158,43 @@ def fig3_existence():
     # on discordant pairs (b = 14, c = 0) over the 200 nontrivial boxes.
     i_sig = len(eps_list) - 1
     y_top = max(cl[i_sig], s2[i_sig])
+    # Significance bracket: raised to y_top+6.0 so the bar-top value labels
+    # (now at +2.2) keep >= 1.7 data units (~5.5 pt) of clearance below the
+    # line at every render size.
     ax.plot([x[i_sig] - width, x[i_sig] + width],
-            [y_top + 3.5, y_top + 3.5], color="0.3", lw=0.8)
+            [y_top + 6.0, y_top + 6.0], color="0.3", lw=0.8)
     ax.plot([x[i_sig] - width, x[i_sig] - width],
-            [y_top + 2.5, y_top + 3.5], color="0.3", lw=0.8)
+            [y_top + 5.0, y_top + 6.0], color="0.3", lw=0.8)
     ax.plot([x[i_sig] + width, x[i_sig] + width],
-            [y_top + 2.5, y_top + 3.5], color="0.3", lw=0.8)
+            [y_top + 5.0, y_top + 6.0], color="0.3", lw=0.8)
     # Significance annotation: two short stacked lines per note, centered on
     # the bar pair; the x-limit leaves >= 1 unit of axes room to the right of
     # the pair (x=1.5) so even the widest line (half-width ~28 pt) stays
     # inside the axes boundary (reported "text beyond the plot
     # border"). Headroom below ylim 64.
     ax.set_xlim(-0.55, 2.55)
-    ax.text(x[i_sig], y_top + 5.7,
+    # Significance annotation: four stacked lines with 6.0 units of data
+    # spacing (~11 pt line centers, ~3 pt bbox clearance) so the lines never
+    # touch at any render size; the bracket sits at y_top+6.0 with the
+    # bar-top labels at +2.2 (>=1.7 units of clearance) and the first line at
+    # +10.5 (>=2.6 units below the bracket); the top line (y_top+28.5 = 67.5)
+    # stays well below ylim 72.
+    ax.text(x[i_sig], y_top + 10.5,
             r"$^{*}p = 1.22\times10^{-4}$", ha="center", fontsize=7)
-    ax.text(x[i_sig], y_top + 7.0, "(exact McNemar)", ha="center",
+    ax.text(x[i_sig], y_top + 16.5, "(exact McNemar)", ha="center",
             fontsize=7)
-    ax.text(x[i_sig], y_top + 10.0, r"$+14$ extra boxes", ha="center",
+    ax.text(x[i_sig], y_top + 22.5, r"$+14$ extra boxes", ha="center",
             fontsize=7, color="0.25")
-    ax.text(x[i_sig], y_top + 11.3, r"($n=200$)", ha="center", fontsize=7,
+    ax.text(x[i_sig], y_top + 28.5, r"($n=200$)", ha="center", fontsize=7,
             color="0.25")
     ax.set_xlabel(r"perturbation radius $\varepsilon$ (input units)")
     ax.set_ylabel("witnessed-vulnerability rate (%)")
-    ax.set_ylim(0, 64)
-    ax.legend(loc="upper left", fontsize=7)
+    ax.set_ylim(0, 72)
+    # Legend above the plot area (outside, two columns) so the top-right
+    # corner holds only the stacked significance annotation and cannot
+    # collide with it at any render size.
+    ax.legend(loc="upper center", bbox_to_anchor=(0.5, 1.17), ncol=2,
+              fontsize=7, frameon=False)
     fig.tight_layout()
     save(fig, "fig8_existence.pdf")
 
