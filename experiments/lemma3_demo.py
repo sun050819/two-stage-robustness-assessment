@@ -2,7 +2,7 @@
 """
 Constructive demonstration that the strict-inclusion branch of the
 Krawczyk existence test (Lemma 3, "Conditional Brouwer inclusion") does
-fire on real interval equations (merged manuscript, Section 7.4.2).
+fire on real interval equations (merged paper, Section 7.4.2).
 
 The paper's certification stage only ever triggered the midpoint-witness
 route (g(m) <= 0) on the tested workloads. This script isolates the

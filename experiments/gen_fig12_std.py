@@ -20,7 +20,7 @@ plt.rcParams.update({
     "ytick.major.width": 0.7,
     "legend.frameon": False,
     "figure.dpi": 300,
-    "pdf.fonttype": 42,   # embed TrueType fonts (Elsevier production requirement)
+    "pdf.fonttype": 42,   # embed TrueType fonts (Publisher production requirement)
     "ps.fonttype": 42,
 })
 

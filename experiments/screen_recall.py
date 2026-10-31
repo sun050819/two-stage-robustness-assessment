@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
-Screening recall against a complete solver (merged manuscript,
-Section 7.4 of the manuscript).
+Screening recall against a complete solver (merged paper,
+Section 7.4 of the paper).
 
 On the same 100-box MNIST MLP (seed 0) workload at eps = 0.01 as the
 complete-solver comparison (complete_solver_compare.py):

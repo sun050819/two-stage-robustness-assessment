@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Joint two-stage protocol evaluation (merged manuscript, Section 7.6).
+Joint two-stage protocol evaluation (merged paper, Section 7.6).
 
 Runs the two-stage robustness assessment protocol on the certification
 models of the SAFE2 line of work, using the screening machinery of the

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
 High-dimensional branch-and-bound completion of the joint protocol's
-undecided boxes (merged manuscript, Section 7.6 / 7.4).
+undecided boxes (merged paper, Section 7.6 / 7.4).
 
 For the MNIST MLPs at eps = 0.02 the SAFE2-Krawczyk certification stage
 certifies nothing and nearly every box is undecided.  This script takes

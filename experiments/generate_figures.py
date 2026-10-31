@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Regenerate manuscript figures (Figs. 2-5) to PR figure standards.
+"""Regenerate paper figures (Figs. 2-5) to PR figure standards.
 
 PR-compliant conventions applied:
   * vector PDF output (no in-figure titles, no color-dependent text)
@@ -7,10 +7,10 @@ PR-compliant conventions applied:
   * triple distinction (color + line style + marker) so plots stay
     readable in grayscale; no red/green as the only contrast
   * legends outside the data area
-  * terminology unified to the manuscript text ("witnessed-vulnerability
+  * terminology unified to the paper text ("witnessed-vulnerability
     rate")
   * data sources are the checked-in result files; every number matches
-    the corresponding table in the manuscript.
+    the corresponding table in the paper.
 
 Run:  python generate_figures.py
 Outputs are written to ../paper/figures/ (fig6_cert_rates.pdf,
@@ -53,7 +53,7 @@ plt.rcParams.update({
     "ytick.major.width": 0.7,
     "legend.frameon": False,
     "figure.dpi": 300,
-    "pdf.fonttype": 42,   # embed TrueType fonts (Elsevier production requirement)
+    "pdf.fonttype": 42,   # embed TrueType fonts (Publisher production requirement)
     "ps.fonttype": 42,
 })
 

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
 End-to-end comparison against a complete solver on a real workload
-(merged manuscript, Section 7.6 / 7.4).
+(merged paper, Section 7.6 / 7.4).
 
 Runs the complete neuron-branching BaB solver (vendor/verifier_bab.py:
 CROWN bounds + exact affine-leaf LP checks, the same solver family as
@@ -14,7 +14,7 @@ reports, for the same first-n correctly classified test samples:
   * the SAFE2-Krawczyk rate on the same samples for comparison.
 
 Together with the auto-LiRPA CROWN-IBP reference bounds already reported
-(Table 4 of the manuscript, produced by run_baselines_lirpa.py), this
+(Table 4 of the paper, produced by run_baselines_lirpa.py), this
 places the interval-method family against both a complete solver and an
 optimized linear relaxation on identical models.
 

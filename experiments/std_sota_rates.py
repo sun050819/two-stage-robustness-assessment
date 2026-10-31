@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """Certified robust rates on standard-trained CNNs: SAFE2 vs auto-LiRPA.
 
-Additional analysis (Table 4 of the manuscript): train standard
+Additional analysis (Table 4 of the paper): train standard
 (natural) CNNs on MNIST and CIFAR-10 (full sets, 3 seeds), then certify the
 SAME samples with the SAME weights using:
   - IBP, classical Krawczyk, SAFE2-Krawczyk (self-implemented vendor verifier)

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
 Screening statistics, extended from 5 to 10 independent runs
-(Section 7.5 of the merged manuscript).
+(Section 7.5 of the merged paper).
 
 Reproduces the two design comparisons of the screening study with 10
 independently trained FC-128 MNIST models (seeds 0..9) instead of 5:

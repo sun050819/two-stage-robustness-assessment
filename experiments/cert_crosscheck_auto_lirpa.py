@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """Official auto-LiRPA cross-check of the self-implemented CROWN-IBP column.
 
-Additional analysis (Table 7 of the manuscript): run the OFFICIAL
+Additional analysis (Table 7 of the paper): run the OFFICIAL
 auto-LiRPA CROWN-IBP bound on the SAME weights (existing IBP-trained
 checkpoints) and the SAME correctly-classified sample sets used by the
 self-implemented CROWN-IBP runs, then compare the two engines side by side.

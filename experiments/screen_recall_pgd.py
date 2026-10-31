@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Screen recall against an attack-based gold standard (Section 7.4 of the manuscript).
+Screen recall against an attack-based gold standard (Section 7.4 of the paper).
 
 Same 100-box MNIST workload as screen_recall.py (eps=0.05): the screen
 (budget 50) and a multi-restart PGD attack (10 steps, 2 restarts, the same

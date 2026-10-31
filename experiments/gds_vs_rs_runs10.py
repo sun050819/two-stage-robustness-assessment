@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
 Equal-budget comparison, extended from 5 to 10 independent runs
-(Section 7.5 of the merged manuscript).
+(Section 7.5 of the merged paper).
 
 Faithfully mirrors the released run_experiment4_multi.py: FC-256 MNIST,
 SGD 0.01/0.9, 20 epochs, batch 128; 200 fixed test samples; gradient-guided

@@ -65,7 +65,7 @@ python lemma3_demo.py            # Section 5: strict-inclusion branch demo
 The run is deterministic (per-sample screening streams seeded from the
 4242 family; certification follows the fixed-seed protocol of the
 certification stage). Results are written to `results/` and reproduce the
-verdict distribution reported in Table 14 of the manuscript:
+verdict distribution reported in Table 14 of the paper:
 
 | Workload            | eps    | Screened vuln. | Cert. robust | Cert. vuln. | Undecided | Certified interval [L,U] | U(100) | U(500) |
 |---------------------|--------|---------------:|-------------:|------------:|----------:|--------------------------|-------:|-------:|
@@ -78,7 +78,7 @@ verdict distribution reported in Table 14 of the manuscript:
 U = 1 − (screened + certified vulnerable)/n (Definition 7: every screened
 witness counts, so both endpoints are backed by guarantees). The
 monotone tightening curve U(N) at budgets 50/100/200/500 (Proposition 3;
-measured on Table 16 of the manuscript) is produced by `budget_sweep.py` →
+measured on Table 16 of the paper) is produced by `budget_sweep.py` →
 `results/budget_sweep.json`; the columns U(100)/U(500) show the curve at
 larger budgets (U at N=50 is the interval's upper endpoint), and the
 intermediate N=200 values are 0.987/0.978/0.963/0.975/0.952 in row order.
@@ -92,7 +92,7 @@ statistics. The CIFAR rows above are the 1500-sample rerun
 
 ## Medium-scale network extension
 
-Beyond the manuscript tables, `results/medium_mlp_rates.json` reports the
+Beyond the paper tables, `results/medium_mlp_rates.json` reports the
 same two-stage protocol on a wider IBP-trained MLP
 (`[784,256,256,10]`, FC-256 family, 3 seeds, 200 samples/seed, pooled
 n=600), produced by `train_mlp_ibp_medium.py` → `medium_network_rates.py`
@@ -126,7 +126,7 @@ sample sets:
 
 The auto-LiRPA reference values were produced by the source repository's
 baseline script on its own checkpoints (different weight set); on the
-weight set used throughout this manuscript the refined self-implementation
+weight set used throughout this paper the refined self-implementation
 matches or exceeds them. Soundness of the refined bound is verified by
 sampling on both architectures (90 MNIST samples x 1500 draws, 36 CIFAR
 samples x 1000 draws, per logit): worst violation 0.0 everywhere.
@@ -138,7 +138,7 @@ same two-stage protocol with the refined CROWN-IBP bound instead of
 SAFE2-Krawczyk leaves the verdict semantics and the certified-interval
 output form unchanged, and the screening-side upper endpoint U is exactly
 invariant; only the certified lower endpoint moves with the engine
-(Table 14 of the manuscript, `results/dual_engine_table.json`):
+(Table 14 of the paper, `results/dual_engine_table.json`):
 
 | Workload   | eps   | Engine              | L (cert. robust) | U (N=50; N=500) |
 |------------|-------|---------------------|-----------------:|----------------:|
@@ -157,7 +157,7 @@ Two additional measurement blocks were run on the local GPU
 (Python 3.11, torch 2.5.1+cu121, RTX 3060 Laptop; official auto-LiRPA
 0.8.0). All numbers below come from the JSON files in `results/`.
 
-### 1. Same-weight comparison on standard (non-IBP) models — Table 4 / Fig. 3 of the manuscript
+### 1. Same-weight comparison on standard (non-IBP) models — Table 4 / Fig. 3 of the paper
 
 Scripts: `experiments/vendor/train_mnist_cnn.py` (standard MNIST CNN
 training), `experiments/train_cnn.py --regime std` (standard CIFAR-10 CNN),
@@ -180,7 +180,7 @@ every sample certified by any engine is certified by auto-LiRPA. The
 paper reports this as the quantified boundary of the interval-method
 family and scopes the certification stage to IBP-trained models.
 
-### 2. Same-weight engine cross-check: official auto-LiRPA vs self-implemented CROWN-IBP — Table 7 of the manuscript
+### 2. Same-weight engine cross-check: official auto-LiRPA vs self-implemented CROWN-IBP — Table 7 of the paper
 
 Script: `experiments/cert_crosscheck_auto_lirpa.py` (official auto-LiRPA
 CROWN-IBP on the *identical* checkpoints, samples, and boxes as the
@@ -208,7 +208,7 @@ RefineIntermediateBounds step of the self-implementation, which
 auto-LiRPA's default CROWN-IBP configuration does not reproduce for that
 architecture. Caveat: earlier exploratory runs that reported 86.5% for
 the official engine used the full 10000-sample MNIST test set (different
-samples than the manuscript's 300-sample subset) and were discarded;
+samples than the paper's 300-sample subset) and were discarded;
 `results/crosscheck_mlp_ibp_unclamped.json` is the authoritative number.
 
 ## Exponential convergence of the tightening (Proposition 4)
@@ -263,7 +263,7 @@ rather than claiming the route solved (`results/bab_safe2_probe.json`).
 ## Reproducing the stage experiments (reproduction scripts)
 
 The screening-stage and certification-stage experiments reported in the
-manuscript are reproduced by the scripts in this folder (self-contained;
+paper are reproduced by the scripts in this folder (self-contained;
 the vendored verification engine lives under `experiments/vendor/`):
 
 - Screening experiments: `experiments/screening_runs10.py`,
@@ -285,7 +285,7 @@ location (no hardcoded absolute paths); datasets are auto-downloaded into
 
 ## Data coverage notes
 
-Reproducibility status of every number in the manuscript:
+Reproducibility status of every number in the paper:
 
 - **Fully reproducible from this repo:** the joint-protocol tables
   (Table 14, Table 15, Table 8 cross-checks), the standard-model SOTA
@@ -296,12 +296,12 @@ Reproducibility status of every number in the manuscript:
   `results/aggregated_by_eps.csv` + `results/crown_ibp_mnist_600.json`.
 - `results/aggregated_by_eps.csv` is the Fig. 6 data file. The SAFE2
   column is computed from `results/joint_mlp.json`; the IBP and Krawczyk
-  columns reproduce the manuscript Table 4 values (the original CSV of the
+  columns reproduce the paper Table 4 values (the original CSV of the
   SAFE2 project is not part of this repository).
 - `verification/measure_screen_timing.py` measures the end-to-end
   50-forward screen cost `c_s(50)` (median over 30 runs on one input,
   written to `verification/screen_timing.json`).
-- **Timing semantics (Table 17):** the manuscript's 7 ms / 14 ms figures
+- **Timing semantics (Table 17):** the paper's 7 ms / 14 ms figures
   are the end-to-end single-input cost of one 50-forward screen
   (50 forward passes plus the random-direction sampling and margin
   checks), as measured by `measure_screen_timing.py`. By contrast,

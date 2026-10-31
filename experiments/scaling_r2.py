@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Scaling study with goodness-of-fit (merged manuscript, Section 7.5).
+Scaling study with goodness-of-fit (merged paper, Section 7.5).
 
 Re-runs the structured O(d) vs dense O(d^2) interval-Krawczyk image timing
 over an extended dimension grid and reports, for each implementation, the
@@ -35,7 +35,7 @@ os.makedirs(OUT_DIR, exist_ok=True)
 torch.manual_seed(0)
 np.random.seed(0)
 
-# extended grid: 2^6 .. 2^14, overlapping the manuscript's 2^8..2^12 window
+# extended grid: 2^6 .. 2^14, overlapping the paper's 2^8..2^12 window
 DS = [64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384]
 REPEATS = {64: 30, 128: 30, 256: 30, 512: 25, 1024: 20,
            2048: 15, 4096: 10, 8192: 6, 16384: 3}
@@ -87,7 +87,7 @@ def main():
     s_s, _, r2_s = fit(logd_all, lt_s)
     s_d, _, r2_d = fit(logd_all, lt_d)
 
-    # manuscript window d in 2^8 .. 2^12
+    # paper window d in 2^8 .. 2^12
     win = [r for r in rows if 256 <= r['d'] <= 4096]
     logd_win = np.log([r['d'] for r in win])
     lt_s_win = np.log([r['t_struct_s'] for r in win])

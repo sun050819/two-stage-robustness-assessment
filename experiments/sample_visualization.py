@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Qualitative sample visualisation (Figure 11 of the manuscript).
+"""Qualitative sample visualisation (Figure 11 of the paper).
 
 Panel A  Two-moons: a nontrivial verification box (midpoint robust, corner
           violating) with the adversarial witness corner marked.
