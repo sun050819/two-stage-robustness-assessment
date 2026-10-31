@@ -60,6 +60,8 @@ python screening_runs10.py       # adaptive/importance, 10 runs
 python gds_vs_rs_runs10.py       # equal-budget GGS vs RS, 10 runs
 python lemma3_demo.py            # strict-inclusion branch demo
 python measure_mlp_runtime.py    # per-sample verification time, MNIST MLPs (Table 13, ~10 min CPU)
+python train_mlp_ibp_medium.py   # IBP-train medium MLP [784,256,256,10], 3 seeds (~20 min CPU)
+python medium_network_rates.py   # medium-MLP joint certification rates (~30 min CPU)
 ```
 
 The run is deterministic (per-sample screening streams seeded from the
@@ -85,6 +87,20 @@ All 1305 robust certificates (102 MNIST, 825 and 378 CIFAR-10) survive
 multi-restart PGD (steps=10, restarts=2). The `results/*.json` files
 contain the full per-sample records (`screen_min_margin`, `cert_iters`)
 needed to recompute the statistics.
+
+## Medium-scale network extension
+
+Beyond the manuscript tables, `results/medium_mlp_rates.json` reports the
+same two-stage protocol on a wider IBP-trained MLP
+(`[784,256,256,10]`, FC-256 family, 3 seeds, 200 samples/seed, pooled
+n=600), produced by `train_mlp_ibp_medium.py` → `medium_network_rates.py`
+(checkpoints: `data/checkpoints/mlp_medium_seed{0,1,2}.pt`):
+
+| Workload        | eps  | Screened vuln. | Cert. robust | Cert. vuln. | Undecided |
+|-----------------|------|---------------:|-------------:|------------:|----------:|
+| Medium MLP 256x2 | 0.01 | 0.5%           | 43.8%        | 0.0%        | 55.7%     |
+| Medium MLP 256x2 | 0.02 | 0.7%           | 8.7%         | 0.0%        | 90.7%     |
+| Medium MLP 256x2 | 0.05 | 2.0%           | 0.0%         | 0.0%        | 98.0%     |
 
 ## CROWN-IBP column (self-implemented, refined)
 

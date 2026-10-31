@@ -1,0 +1,128 @@
+{
+ "workload": "MNIST medium-scale MLP [784,256,256,10] (IBP-trained, 3 seeds)",
+ "n_per_seed": 200,
+ "eps_list": [
+  0.01,
+  0.02,
+  0.05
+ ],
+ "pooled_rates": {
+  "0.01": {
+   "n": 600,
+   "screened_vuln_rate": 0.005,
+   "certified_robust_rate": 0.4383,
+   "certified_vuln_rate": 0.0,
+   "undecided_rate": 0.5567,
+   "counts": {
+    "screened_vuln": 3,
+    "cert_robust": 263,
+    "cert_vuln": 0,
+    "undecided": 334,
+    "errors": 0
+   }
+  },
+  "0.02": {
+   "n": 600,
+   "screened_vuln_rate": 0.0067,
+   "certified_robust_rate": 0.0867,
+   "certified_vuln_rate": 0.0,
+   "undecided_rate": 0.9067,
+   "counts": {
+    "screened_vuln": 4,
+    "cert_robust": 52,
+    "cert_vuln": 0,
+    "undecided": 544,
+    "errors": 0
+   }
+  },
+  "0.05": {
+   "n": 600,
+   "screened_vuln_rate": 0.02,
+   "certified_robust_rate": 0.0,
+   "certified_vuln_rate": 0.0,
+   "undecided_rate": 0.98,
+   "counts": {
+    "screened_vuln": 12,
+    "cert_robust": 0,
+    "cert_vuln": 0,
+    "undecided": 588,
+    "errors": 0
+   }
+  }
+ },
+ "per_seed": {
+  "0": {
+   "0.01": {
+    "screened_vuln": 2,
+    "cert_robust": 88,
+    "cert_vuln": 0,
+    "undecided": 110,
+    "errors": 0
+   },
+   "0.02": {
+    "screened_vuln": 2,
+    "cert_robust": 14,
+    "cert_vuln": 0,
+    "undecided": 184,
+    "errors": 0
+   },
+   "0.05": {
+    "screened_vuln": 4,
+    "cert_robust": 0,
+    "cert_vuln": 0,
+    "undecided": 196,
+    "errors": 0
+   }
+  },
+  "1": {
+   "0.01": {
+    "screened_vuln": 0,
+    "cert_robust": 82,
+    "cert_vuln": 0,
+    "undecided": 118,
+    "errors": 0
+   },
+   "0.02": {
+    "screened_vuln": 1,
+    "cert_robust": 25,
+    "cert_vuln": 0,
+    "undecided": 174,
+    "errors": 0
+   },
+   "0.05": {
+    "screened_vuln": 5,
+    "cert_robust": 0,
+    "cert_vuln": 0,
+    "undecided": 195,
+    "errors": 0
+   }
+  },
+  "2": {
+   "0.01": {
+    "screened_vuln": 1,
+    "cert_robust": 93,
+    "cert_vuln": 0,
+    "undecided": 106,
+    "errors": 0
+   },
+   "0.02": {
+    "screened_vuln": 1,
+    "cert_robust": 13,
+    "cert_vuln": 0,
+    "undecided": 186,
+    "errors": 0
+   },
+   "0.05": {
+    "screened_vuln": 3,
+    "cert_robust": 0,
+    "cert_vuln": 0,
+    "undecided": 197,
+    "errors": 0
+   }
+  }
+ },
+ "timing_s": {
+  "screening": 8.65,
+  "safe2": 1975.39
+ }
+}
