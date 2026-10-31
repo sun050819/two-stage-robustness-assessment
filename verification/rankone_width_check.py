@@ -16,20 +16,21 @@ Uses the exact operators of verifier_lib (same box, hull, and K1 as the paper).
 import os
 import sys
 import json
-from pathlib import Path
 
 import numpy as np
 import torch
 
-ROOT = Path(__file__).resolve().parent.parent
-VENDOR = ROOT / "experiments" / "vendor"
-sys.path.insert(0, str(VENDOR))
+BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+CODE = os.path.join(BASE, "sources", "SAFE2_NN_Verification", "code")
+VENDOR = os.path.join(BASE, "experiments", "vendor")
+sys.path.insert(0, CODE)
+sys.path.insert(0, VENDOR)
 
 from train import MLP, load_mnist  # noqa: E402
 import verifier_lib as vl  # noqa: E402
 
 torch.manual_seed(0)
-CKPT = ROOT / "data" / "checkpoints" / "mlp_seed0.pt"
+CKPT = os.path.join(BASE, "data", "checkpoints", "mlp_seed0.pt")
 EPS = 0.01
 N_SAMPLES = 30
 N_DIRS = 50
@@ -127,7 +128,7 @@ def main():
         "C_parallel_ratio_mean": float(np.mean(c_ratios)),
         "C_parallel_shrink_fraction": c_shrink / len(c_ratios),
     }
-    out = ROOT / "verification" / "rankone_width_check.json"
+    out = os.path.join(BASE, "verification", "rankone_width_check.json")
     with open(out, "w", encoding="utf-8") as f:
         json.dump(res, f, ensure_ascii=False, indent=1)
     print(json.dumps(res, indent=1))

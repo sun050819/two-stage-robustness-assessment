@@ -8,7 +8,6 @@ the figure set, grayscale-distinguishable bar colors.
 """
 import json
 import os
-from pathlib import Path
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
@@ -25,8 +24,8 @@ plt.rcParams.update({
     "ps.fonttype": 42,
 })
 
-BASE = Path(__file__).resolve().parent.parent
-d = json.load(open(BASE / 'results' / 'std_rates_mnist.json', encoding='utf-8'))
+BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+d = json.load(open(os.path.join(BASE, 'results', 'std_rates_mnist.json'), encoding='utf-8'))
 p = d['pooled']
 eps01 = p['0.01']
 methods = ['ibp', 'krawczyk', 'safe2', 'crown_ibp']
@@ -50,6 +49,6 @@ ax.set_ylabel('certified robust rate (%)', fontsize=9)
 ax.set_ylim(0, 88)
 ax.grid(axis='y', alpha=0.3, linewidth=0.5)
 fig.tight_layout()
-out = BASE / 'paper' / 'figures' / 'fig12_std_cert_rates.pdf'
+out = os.path.join(BASE, 'paper', 'figures', 'fig12_std_cert_rates.pdf')
 fig.savefig(out, bbox_inches='tight')
 print('SAVED', out)

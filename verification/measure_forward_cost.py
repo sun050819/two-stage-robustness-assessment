@@ -4,18 +4,17 @@ workloads, to instantiate c_s(N) = N x forward-time in the cost model."""
 import os
 import sys
 import time
-from pathlib import Path
 
 import torch
 
-ROOT = Path(__file__).resolve().parent.parent
-VENDOR = ROOT / "experiments" / "vendor"
-sys.path.insert(0, str(VENDOR))
+BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+VENDOR = os.path.join(BASE, "experiments", "vendor")
+sys.path.insert(0, VENDOR)
 from train import MLP  # noqa: E402
 from train_cnn import make_cnn  # noqa: E402
 
 REPS = 200
-OUT = ROOT / "verification" / "forward_timing.json"
+OUT = os.path.join(BASE, "verification", "forward_timing.json")
 
 
 def bench(model, x, reps=REPS):
@@ -32,9 +31,9 @@ def bench(model, x, reps=REPS):
 def main():
     torch.set_num_threads(4)
     mlp = MLP([784, 64, 64, 10])
-    mlp.load_state_dict(torch.load(ROOT / "data" / "checkpoints" / "mlp_seed0.pt", map_location="cpu"))
+    mlp.load_state_dict(torch.load(os.path.join(BASE, "data", "checkpoints", "mlp_seed0.pt"), map_location="cpu"))
     cnn = make_cnn()
-    cnn.load_state_dict(torch.load(ROOT / "data" / "checkpoints" / "cnn_ibp_seed0.pt", map_location="cpu"))
+    cnn.load_state_dict(torch.load(os.path.join(BASE, "data", "checkpoints", "cnn_ibp_seed0.pt"), map_location="cpu"))
     mlp.eval()
     cnn.eval()
     x_mlp = torch.randn(1, 784)
