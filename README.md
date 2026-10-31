@@ -16,7 +16,7 @@ and bundled checkpoints; the MNIST and CIFAR-10 datasets are downloaded by
 torchvision on first run into `data/datasets/` (or can be pre-seeded
 there).
 
-Directory layout
+## Directory layout
 
 ```
 two-stage-robustness-assessment/
@@ -89,6 +89,20 @@ restarts=2). The `results/*.json` files contain the full per-sample
 records (`screen_min_margin`, `cert_iters`) needed to recompute the
 statistics. The CIFAR rows above are the 1500-sample rerun
 (`joint_cnn_1500.json`, `--cnn-samples 500`).
+
+## Medium-scale network extension
+
+Beyond the manuscript tables, `results/medium_mlp_rates.json` reports the
+same two-stage protocol on a wider IBP-trained MLP
+(`[784,256,256,10]`, FC-256 family, 3 seeds, 200 samples/seed, pooled
+n=600), produced by `train_mlp_ibp_medium.py` → `medium_network_rates.py`
+(checkpoints: `data/checkpoints/mlp_medium_seed{0,1,2}.pt`):
+
+| Workload        | eps  | Screened vuln. | Cert. robust | Cert. vuln. | Undecided |
+|-----------------|------|---------------:|-------------:|------------:|----------:|
+| Medium MLP 256x2 | 0.01 | 0.5%           | 43.8%        | 0.0%        | 55.7%     |
+| Medium MLP 256x2 | 0.02 | 0.7%           | 8.7%         | 0.0%        | 90.7%     |
+| Medium MLP 256x2 | 0.05 | 2.0%           | 0.0%         | 0.0%        | 98.0%     |
 
 ## CROWN-IBP column (self-implemented, refined)
 
@@ -268,3 +282,42 @@ the vendored verification engine lives under `experiments/vendor/`):
 All scripts resolve their data/checkpoint paths relative to their own
 location (no hardcoded absolute paths); datasets are auto-downloaded into
 `data/datasets/` on first use if not pre-seeded.
+
+## Data coverage notes
+
+Reproducibility status of every number in the manuscript:
+
+- **Fully reproducible from this repo:** the joint-protocol tables
+  (Table 14, Table 15, Table 8 cross-checks), the standard-model SOTA
+  tables (Table 5, S.1, S.5), the runtime tables (Table 13,
+  `results/mlp_runtime_ibp.json` + `results/cnn_runtime_ibp.json`),
+  the scaling/Prop.-4 fits (Table 12, Table 16), and Figs. 10, 11, 12.
+  Fig. 6 (certified rate vs. radius) is reproducible from
+  `results/aggregated_by_eps.csv` + `results/crown_ibp_mnist_600.json`.
+- `results/aggregated_by_eps.csv` is the Fig. 6 data file. The SAFE2
+  column is computed from `results/joint_mlp.json`; the IBP and Krawczyk
+  columns reproduce the manuscript Table 4 values (the original CSV of the
+  SAFE2 project is not part of this repository).
+- `verification/measure_screen_timing.py` measures the end-to-end
+  50-forward screen cost `c_s(50)` (median over 30 runs on one input,
+  written to `verification/screen_timing.json`).
+- **Timing semantics (Table 17):** the manuscript's 7 ms / 14 ms figures
+  are the end-to-end single-input cost of one 50-forward screen
+  (50 forward passes plus the random-direction sampling and margin
+  checks), as measured by `measure_screen_timing.py`. By contrast,
+  `verification/forward_timing.json` (produced by
+  `verification/measure_forward_cost.py`) reports only the pure forward
+  cost: its `mlp_c_s(50)_s` = 1.4 ms and `cnn_c_s(50)_s` = 4.2 ms are
+  50 x single-forward timings without the screening overhead, so the two
+  files intentionally measure different quantities and are not in
+  conflict.
+- **Not reproducible from this repo (original SAFE2 two-moons / early
+  screening experiments):** Fig. 8 (witnessed-vulnerability rate on
+  two-moons boxes), Fig. 9 (contraction trajectory), Table 10 (two-moons
+  existence witnesses), Table 3 Panel A (MDS vs. RS screening rates),
+  Table 6 / Tables S.6-S.7 (max certified radius h_max), Tables S.2-S.4
+  (GDS/MDS screening and attack-detection rates). These numbers were
+  produced by the original SAFE2_NN_Verification project and early-stage
+  scripts that are not archived here; `generate_figures.py` skips Figs. 8-9
+  with a notice when the source files are absent. The values are available
+  from the authors on request.
