@@ -62,6 +62,7 @@ python lemma3_demo.py            # strict-inclusion branch demo
 python measure_mlp_runtime.py    # per-sample verification time, MNIST MLPs (Table 13, ~10 min CPU)
 python train_mlp_ibp_medium.py   # IBP-train medium MLP [784,256,256,10], 3 seeds (~20 min CPU)
 python medium_network_rates.py   # medium-MLP joint certification rates (~30 min CPU)
+python ../verification/measure_forward_cost.py  # pure-forward timing (Table 17, forward_timing.json)
 ```
 
 The run is deterministic (per-sample screening streams seeded from the
@@ -259,8 +260,17 @@ Reproducibility status of every number in the manuscript:
   SAFE2 project is not part of this repository).
 - `verification/measure_screen_timing.py` measures the end-to-end
   50-forward screen cost `c_s(50)` (median over 30 runs on one input,
-  `results`/`verification/screen_timing.json`); `forward_timing.json`
-  reports the pure-forward-pass cost per architecture.
+  written to `verification/screen_timing.json`).
+- **Timing semantics (Table 17):** the manuscript's 7 ms / 14 ms figures
+  are the end-to-end single-input cost of one 50-forward screen
+  (50 forward passes plus the random-direction sampling and margin
+  checks), as measured by `measure_screen_timing.py`. By contrast,
+  `verification/forward_timing.json` (produced by
+  `verification/measure_forward_cost.py`) reports only the pure forward
+  cost: its `mlp_c_s(50)_s` = 1.4 ms and `cnn_c_s(50)_s` = 4.2 ms are
+  50 x single-forward timings without the screening overhead, so the two
+  files intentionally measure different quantities and are not in
+  conflict.
 - **Not reproducible from this repo (original SAFE2 two-moons / early
   screening experiments):** Fig. 8 (witnessed-vulnerability rate on
   two-moons boxes), Fig. 9 (contraction trajectory), Table 10 (two-moons
